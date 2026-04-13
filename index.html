@@ -1,14 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Bandagar Portfolio</title>
+<title>Aditya | Portfolio</title>
 
 <style>
-
-/* RESET */
 
 *{
 margin:0;
@@ -17,46 +14,27 @@ box-sizing:border-box;
 font-family:Segoe UI;
 }
 
-/* ANIMATED BACKGROUND */
+html{
+scroll-behavior:smooth;
+}
 
 body{
-margin:0;
-height:100vh;
 color:white;
-cursor:none;
-background:linear-gradient(270deg,#0f172a,#1e293b,#020617,#334155,#1e293b);
-background-size:1000% 1000%;
-animation:moveBG 20s linear infinite;
-}
-
-@keyframes moveBG{
-
-0%{background-position:0% 50%;}
-
-50%{background-position:100% 50%;}
-
-100%{background-position:0% 50%;}
-
-}
-
-/* CURSOR */
-
-.cursor{
-width:18px;
-height:18px;
-border:2px solid #38bdf8;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
+background:#020617;
 }
 
 /* NAVBAR */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
-padding:20px 8%;
+padding:15px 8%;
 background:#020617;
+border-bottom:1px solid #1e293b;
+z-index:1000;
 }
 
 .logo{
@@ -65,44 +43,52 @@ font-size:22px;
 font-weight:bold;
 }
 
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
 /* HERO */
 
 .hero{
-height:90vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding-top:80px;
 }
 
 .profile{
-width:160px;
-height:160px;
+width:150px;
+height:150px;
 border-radius:50%;
 border:3px solid #38bdf8;
 margin-bottom:20px;
-animation:float 4s infinite;
+object-fit:cover;
 }
 
 .hero h1{
-font-size:42px;
+font-size:40px;
+color:#38bdf8;
 }
 
-@keyframes float{
-
-0%{transform:translateY(0)}
-
-50%{transform:translateY(-10px)}
-
-100%{transform:translateY(0)}
-
+.hero p{
+opacity:0.7;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
-padding:80px 8%;
+padding:80px 20px;
+max-width:1000px;
+margin:auto;
 }
 
 h2{
@@ -111,185 +97,63 @@ color:#38bdf8;
 margin-bottom:30px;
 }
 
-/* ABOUT */
+/* GRID (MAIN FIX) */
 
-.about{
-max-width:800px;
-margin:auto;
-text-align:center;
-line-height:1.8;
+.flex{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+gap:20px;
 }
 
-/* SUBJECTS */
+/* BOX */
 
-.subjects{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.subject{
-background:#1e293b;
-padding:10px 20px;
-border-radius:20px;
-transition:0.3s;
-}
-
-.subject:hover{
-background:#38bdf8;
-color:black;
-transform:scale(1.1);
-}
-
-/* SKILLS */
-
-.skills{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.skill{
-background:#1e293b;
-padding:10px 20px;
-border-radius:20px;
-transition:0.3s;
-}
-
-.skill:hover{
-background:#38bdf8;
-color:black;
-transform:scale(1.1);
-}
-
-/* BMW SLIDER */
-
-.slider{
-text-align:center;
-}
-
-.slider img{
-width:100%;
-max-width:500px;
+.box{
+background:#0f172a;
+padding:20px;
 border-radius:12px;
+text-align:center;
+border:1px solid #1e293b;
+transition:0.3s;
 }
 
-/* PROJECT CARDS */
-
-.projects{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
+.box:hover{
+transform:translateY(-5px);
+box-shadow:0 0 15px #38bdf8;
 }
 
-.card{
-width:200px;
-height:140px;
-background:#1e293b;
-border-radius:10px;
-display:flex;
-justify-content:center;
-align-items:center;
-transition:0.4s;
-}
+/* BUTTON */
 
-.card:hover{
-transform:rotateY(15deg) rotateX(10deg) scale(1.1);
+.btn{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+border-radius:20px;
 background:#38bdf8;
-color:black;
+cursor:pointer;
 }
 
 /* CONTACT */
 
-.contact{
-text-align:center;
-line-height:1.8;
-}
-
-/* CHATBOX */
-
-.chat-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#38bdf8;
-padding:15px;
-border-radius:50%;
-cursor:pointer;
-}
-
-.chatbox{
-position:fixed;
-bottom:80px;
-right:20px;
-width:300px;
-background:#020617;
-border-radius:10px;
-display:none;
-flex-direction:column;
-}
-
-.chat-header{
-background:#38bdf8;
+input,textarea{
+width:100%;
 padding:10px;
-color:black;
-}
-
-.chat-body{
-height:180px;
-overflow:auto;
-padding:10px;
-}
-
-.chat-input{
-display:flex;
-}
-
-.chat-input input{
-flex:1;
-padding:8px;
+margin:8px 0;
 border:none;
+border-radius:5px;
 }
 
-.chat-input button{
-background:#38bdf8;
-border:none;
-padding:8px;
+#contact .box{
+max-width:400px;
+margin:auto;
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:20px;
+padding:15px;
 background:#020617;
-margin-top:40px;
-}
-
-/* MOBILE */
-
-@media (max-width:768px){
-
-.hero h1{
-font-size:30px;
-}
-
-.section{
-padding:50px 5%;
-}
-
-.slider img{
-width:90%;
-}
-
-.card{
-width:150px;
-height:110px;
-}
-
+border-top:1px solid #1e293b;
 }
 
 </style>
@@ -297,100 +161,79 @@ height:110px;
 
 <body>
 
-<div class="cursor" id="cursor"></div>
+<!-- NAVBAR -->
 
 <nav>
+<div class="logo">Aditya 👑</div>
 
-<div class="logo">Aditya</div>
-
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 
-<div class="hero">
+<div class="hero" id="home">
 
-<div class="profile"></div>
+<img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a" class="profile">
 
 <h1>Aditya Bandagar</h1>
-
-<p>Computer Engineering Student</p>
+<p>Future Software Developer 🚀</p>
 
 </div>
 
 <!-- ABOUT -->
 
-<div class="section">
-
+<div class="section" id="about">
 <h2>About Me</h2>
 
-<p class="about">
-Hello 👋 I'm Aditya Bandagar from Satara Polytechnic.
-I enjoy programming, web development and modern technology.
-My goal is to become a professional software developer.
-</p>
-
-</div>
-
-<!-- QUALITY SUBJECT -->
-
-<div class="section">
-
-<h2>Quality Subjects</h2>
-
-<div class="subjects">
-
-<div class="subject">Programming</div>
-<div class="subject">Computer Networks</div>
-<div class="subject">Operating System</div>
-<div class="subject">Database</div>
-
+<div class="box">
+<p>Hello 👋 I'm Aditya Bandagar. I love coding and web development.</p>
 </div>
 
 </div>
 
 <!-- SKILLS -->
 
-<div class="section">
-
+<div class="section" id="skills">
 <h2>Skills</h2>
 
-<div class="skills">
-
-<div class="skill">C Programming</div>
-<div class="skill">C++</div>
-<div class="skill">HTML</div>
-<div class="skill">Java</div>
-<div class="skill">Web Design</div>
-
-</div>
-
-</div>
-
-<!-- BMW SLIDER -->
-
-<div class="section">
-
-<h2>BMW Car Collection</h2>
-
-<div class="slider">
-
-<img id="car">
-
+<div class="flex">
+<div class="box">C</div>
+<div class="box">C++</div>
+<div class="box">HTML</div>
+<div class="box">Java</div>
 </div>
 
 </div>
 
 <!-- PROJECTS -->
 
-<div class="section">
-
+<div class="section" id="projects">
 <h2>Projects</h2>
 
-<div class="projects">
+<div class="flex">
 
-<div class="card">Portfolio</div>
-<div class="card">BMW Gallery</div>
-<div class="card">Web Design</div>
+<div class="box">
+<h3>YouTube Clone 🎬</h3>
+<a href="https://www.figma.com/proto/zTVqvwqAKCSYKH9CR2BLHO/Untitled?node-id=0-3" target="_blank">
+<button class="btn">View Design 🚀</button>
+</a>
+</div>
+
+<div class="box">
+<h3>My Resume 📄</h3>
+<p>Click below to view</p>
+
+<a href="Aditya_Bandagar_Resume.pdf" target="_blank">
+<button class="btn">View Resume 👀</button>
+</a>
+
+</div>
 
 </div>
 
@@ -398,101 +241,36 @@ My goal is to become a professional software developer.
 
 <!-- CONTACT -->
 
-<div class="section">
+<div class="section" id="contact">
+<h2>Contact</h2>
 
-<h2>Contact Me</h2>
+<div class="box">
 
-<div class="contact">
+<input type="text" id="name" placeholder="Your Name">
+<input type="email" id="email" placeholder="Your Email">
+<textarea id="message" placeholder="Your Message"></textarea>
 
-<p>📞 </p>
-<p>📧 adityabandagar7@gmail.com</p>
+<button class="btn" onclick="sendMail()">Send</button>
 
 </div>
-
 </div>
 
 <footer>
-
 <p>© 2026 Aditya Bandagar</p>
-
 </footer>
-
-<!-- CHAT -->
-
-<div class="chat-btn" onclick="toggleChat()">💬</div>
-
-<div class="chatbox" id="chat">
-
-<div class="chat-header">AI Chat</div>
-
-<div class="chat-body" id="chatBody">
-<p>Hello 👋</p>
-</div>
-
-<div class="chat-input">
-
-<input id="msg">
-
-<button onclick="send()">Send</button>
-
-</div>
-
-</div>
 
 <script>
 
-/* CURSOR */
+function sendMail(){
 
-const cursor=document.getElementById("cursor");
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
 
-document.addEventListener("mousemove",(e)=>{
-cursor.style.top=e.clientY+"px";
-cursor.style.left=e.clientX+"px";
-});
+let subject = "Message from " + name;
+let body = "Name: " + name + "%0AEmail: " + email + "%0AMessage: " + message;
 
-/* BMW SLIDER */
-
-const cars=[
-"https://images.unsplash.com/photo-1503376780353-7e6692767b70",
-"https://images.unsplash.com/photo-1493238792000-8113da705763",
-"https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
-];
-
-let index=0;
-
-function changeCar(){
-
-document.getElementById("car").src=cars[index];
-
-index++;
-
-if(index>=cars.length){index=0;}
-
-}
-
-setInterval(changeCar,3000);
-
-changeCar();
-
-/* CHAT */
-
-function toggleChat(){
-
-let c=document.getElementById("chat");
-
-c.style.display=c.style.display==="flex"?"none":"flex";
-
-}
-
-function send(){
-
-let msg=document.getElementById("msg").value;
-
-let body=document.getElementById("chatBody");
-
-body.innerHTML+="<p>You: "+msg+"</p>";
-
-body.innerHTML+="<p>Bot: Nice 👍</p>";
+window.location.href = "mailto:adityabandagar7@gmail.com?subject=" + subject + "&body=" + body;
 
 }
 
@@ -500,4 +278,3 @@ body.innerHTML+="<p>Bot: Nice 👍</p>";
 
 </body>
 </html>
-
